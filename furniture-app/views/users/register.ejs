@@ -1,0 +1,53 @@
+<%- include('../partials/header') %>
+
+<h1 class="mb-4">Register</h1>
+
+<div class="row">
+    <div class="col-md-6 offset-md-3">
+        <form action="/register" method="POST" class="needs-validation" novalidate>
+            <div class="mb-3">
+                <label class="form-label" for="username">Username</label>
+                <input class="form-control" type="text" id="username" name="username" required>
+                <div class="invalid-feedback">
+                    Please provide a username.
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="password">Password</label>
+                <input class="form-control" type="password" id="password" name="password" required>
+                <div class="invalid-feedback">
+                    Please provide a password.
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="phoneNumber">Phone Number</label>
+                <input class="form-control" type="tel" id="phoneNumber" name="phoneNumber" required>
+                <div class="invalid-feedback">
+                    Please provide a phone number.
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="age">Age</label>
+                <input class="form-control" type="number" id="age" name="age" required min="18">
+                <div class="invalid-feedback">
+                    Please provide a valid age (must be at least 18).
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="location">Address Location</label>
+                <input class="form-control" type="text" id="location" name="location" required>
+                <div class="invalid-feedback">
+                    Please provide a location.
+                </div>
+            </div>
+            <div class="mb-3">
+                <button class="btn btn-success">Register</button>
+            </div>
+        </form>
+        <div class="mt-3">
+            <p>Already have an account? <a href="/login">Login</a></p>
+        </div>
+    </div>
+</div>
+
+<%- include('../partials/footer') %>

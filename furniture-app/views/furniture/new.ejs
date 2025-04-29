@@ -1,0 +1,37 @@
+<%- include('../partials/header') %>
+
+<h1 class="mb-4">Add New Furniture</h1>
+
+<div class="row">
+    <div class="col-md-6 offset-md-3">
+        <form action="/furniture" method="POST" enctype="multipart/form-data" class="needs-validation" novalidate>
+            <div class="mb-3">
+                <label class="form-label" for="furnitureName">Furniture Name</label>
+                <input class="form-control" type="text" id="furnitureName" name="furnitureName" required>
+                <div class="invalid-feedback">
+                    Please provide a furniture name.
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="price">Price</label>
+                <input class="form-control" type="number" id="price" name="price" required min="0">
+                <div class="invalid-feedback">
+                    Please provide a valid price.
+                </div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label" for="image">Image</label>
+                <input class="form-control" type="file" id="image" name="image" required accept="image/*">
+                <div class="invalid-feedback">
+                    Please upload an image.
+                </div>
+            </div>
+            <div class="mb-3">
+                <button class="btn btn-success">Add Furniture</button>
+            </div>
+        </form>
+        <a href="/furniture">Back to All Furniture</a>
+    </div>
+</div>
+
+<%- include('../partials/footer') %>

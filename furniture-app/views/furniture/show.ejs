@@ -1,0 +1,28 @@
+<%- include('../partials/header') %>
+
+<div class="row mb-4">
+    <div class="col-md-6">
+        <div class="card">
+            <img src="/<%= furniture.image %>" class="card-img-top" alt="<%= furniture.furnitureName %>">
+            <div class="card-body">
+                <h5 class="card-title"><%= furniture.furnitureName %></h5>
+                <p class="card-text">Price: $<%= furniture.price %></p>
+                <p class="card-text"><small class="text-muted">Posted by <%= furniture.owner.username %></small></p>
+                <p class="card-text"><small class="text-muted">Created: <%= furniture.createdAt.toLocaleDateString() %></small></p>
+                
+                <% if(currentUser && furniture.owner.equals(currentUser._id)) { %>
+                <div class="d-flex mt-3">
+                    <a href="/furniture/<%= furniture._id %>/edit" class="btn btn-info me-2">Edit</a>
+                    <form action="/furniture/<%= furniture._id %>?_method=DELETE" method="POST">
+                        <button class="btn btn-danger">Delete</button>
+                    </form>
+                </div>
+                <% } %>
+            </div>
+        </div>
+    </div>
+</div>
+
+<a href="/furniture" class="btn btn-secondary">Back to All Furniture</a>
+
+<%- include('../partials/footer') %>
